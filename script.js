@@ -103,8 +103,6 @@ class ChatTree {
 
   async getMessage(input) {
     let resp = "";
-    //input = new String(input.trim());
-    //console.log(input);
     if (this.firstMsg === true) {
       this.firstMsg = false;
       resp += "Hey there buddy<br>";
@@ -133,7 +131,6 @@ class ChatTree {
     if ("message" in this.chat_tree) {
       let data;
       if (this.chat_tree["type"] === "function") {
-        // console.log(String(this.chat_tree['message']),String("getJoke()"));
         if (this.chat_tree["message"] === "getJoke()") {
           data = await eval(this.chat_tree["message"]);
           data = data.value.joke;
